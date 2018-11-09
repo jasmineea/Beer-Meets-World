@@ -1,0 +1,18 @@
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <% if user_signed_in? %>
+      <li class="nav-item active">
+        <span id="user-name"><%= current_user.name %></span>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Edit Profile', edit_user_registration_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+      </li>
+        <% else # user not signed it %>
+        <li><%= link_to 'Login', login_path %></li>
+        <li ><%= link_to 'Signup', signup_path %></li>
+    <% end # if user is signed it %>
+    </ul>
+  </div>
